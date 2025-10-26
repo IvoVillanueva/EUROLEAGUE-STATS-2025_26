@@ -1,7 +1,7 @@
 library(httr)
 library(tidyverse)
 
-euroligaStats <- GET("https://feeds.incrowdsports.com/provider/euroleague-feeds/v3/competitions/E/statistics/players/traditional?seasonMode=Single&limit=1000&sortDirection=descending&seasonCode=E2025&statisticMode=perGame&statisticSortMode=perGame") %>%
+euroligaStats <- GET(JSON_STATS_EUROLEAGE) %>%
   content() %>% 
   pluck("players") %>%
   tibble(value = .) %>%
