@@ -1,4 +1,4 @@
-name: Estadisticas tradicioneles Eurleague
+name: Estadisticas tradicionales Euroleague
 
 on:
   workflow_dispatch:
