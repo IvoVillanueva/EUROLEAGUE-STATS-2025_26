@@ -6,7 +6,7 @@ library(tidyverse)
 if (!dir.exists("data")) dir.create("data")
 
 #codigo
-euroligaStats <- GET(Sys.getenv("JSON_STATS_EUROLEAGE"), query = list() %>%
+euroligaStats <- GET(Sys.getenv("JSON_STATS_EUROLEAGE"), query = list()) %>%
   content() %>% 
   pluck("players") %>%
   tibble(value = .) %>%
@@ -15,4 +15,4 @@ euroligaStats <- GET(Sys.getenv("JSON_STATS_EUROLEAGE"), query = list() %>%
   unnest_wider(team, names_sep = "_")
 
 #escribir el dataframe en la carpeta "data/"
-write.csv(euroligaStats, paste0("data/euroligaStats.csv"), row.names = F)
+write.csv(euroligaStats, "data/euroligaStats.csv", row.names = F)
