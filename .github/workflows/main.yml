@@ -37,7 +37,7 @@ jobs:
           packages: tidyverse, httr
           
       - name: Run R update script
-        run: Rscript defensive-odds.R
+        run: Rscript stadisticas.R
         shell: bash
 
       - name: Commit changes in data folder
