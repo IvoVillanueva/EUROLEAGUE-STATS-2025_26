@@ -8,7 +8,7 @@ if (!dir.exists("data")) dir.create("data")
 #código
 euroligaStats <- GET("JSON_STATS_EUROLEAGE", query = list() %>%
   content() %>% 
-  pluck("players") %>%
+  pluck(.,"players") %>%
   tibble(value = .) %>%
   unnest_wider(value) %>% 
   unnest_wider(player) %>% 
