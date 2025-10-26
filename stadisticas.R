@@ -14,5 +14,5 @@ euroligaStats <- GET("JSON_STATS_EUROLEAGE", query = list() %>%
   unnest_wider(player) %>% 
   unnest_wider(team, names_sep = "_")
 
-#escribir el dataframe en la carpeta data
-write.csv(euroligaStats, paste0("data/*.csv"), row.names = F)
+#escribir el dataframe en la carpeta "data/"
+write.csv(euroligaStats, paste0("data/euroligaStats.csv"), row.names = F)
