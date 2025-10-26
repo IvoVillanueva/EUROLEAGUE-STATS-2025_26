@@ -6,7 +6,7 @@ library(tidyverse)
 if (!dir.exists("data")) dir.create("data")
 
 #código
-euroligaStats <- GET("JSON_STATS_EUROLEAGE") %>%
+euroligaStats <- GET("JSON_STATS_EUROLEAGE", query = list() %>%
   content() %>% 
   pluck("players") %>%
   tibble(value = .) %>%
