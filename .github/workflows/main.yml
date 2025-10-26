@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      JSON_STATS_EUROLEAGE: ${{ secrets.JSON_STATS_EUROLEAGE }}
     steps:
       - uses: actions/checkout@v3  
       
@@ -36,8 +35,10 @@ jobs:
         with: 
           packages: tidyverse, httr
           
-      - name: Run R update script
-        run: Rscript stadisticas.R
+      - name: Run R script
+        env:
+          JSON_STATS_EUROLEAGE: ${{ secrets.JSON_STATS_EUROLEAGE }}
+        run: Rscript estadisticas.R
         shell: bash
 
       - name: Commit changes in data folder
