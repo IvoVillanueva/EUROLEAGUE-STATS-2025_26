@@ -38,7 +38,7 @@ jobs:
       - name: Run R script
         env:
           JSON_STATS_EUROLEAGE: ${{ secrets.JSON_STATS_EUROLEAGE }}
-        run: Rscript estadisticas.R
+        run: Rscript stadisticas.R
         shell: bash
 
       - name: Commit changes in data folder
