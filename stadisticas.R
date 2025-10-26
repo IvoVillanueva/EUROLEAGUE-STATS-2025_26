@@ -6,7 +6,7 @@ library(tidyverse)
 if (!dir.exists("data")) dir.create("data")
 
 #codigo
-euroligaStats <- GET(Sys.getenv("JSON_STATS_EUROLEAGE"), query = list()) %>%
+euroligaStats <- GET("https://feeds.incrowdsports.com/provider/euroleague-feeds/v3/competitions/E/statistics/players/traditional?seasonMode=Single&limit=1000&sortDirection=descending&seasonCode=E2025&statisticMode=perGame&statisticSortMode=perGame", query = list()) %>%
   content() %>% 
   pluck("players") %>%
   tibble(value = .) %>%
