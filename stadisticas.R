@@ -3,7 +3,7 @@ library(httr)
 library(tidyverse)
 
 # fecha de hoy
-today <- Sys.Date()
+today <- as.Date(format(Sys.time(), tz = "Europe/Madrid"))
 
 # asegurar que la carpeta data existe
 if (!dir.exists("data")) dir.create("data")
