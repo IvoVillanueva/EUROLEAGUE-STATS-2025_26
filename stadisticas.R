@@ -12,7 +12,7 @@ euroligaStats <- GET(Sys.getenv("JSON_STATS_EUROLEAGUE"), query = list()) %>%
   tibble(value = .) %>%
   unnest_wider(value) %>% 
   unnest_wider(player) %>% 
-  unnest_wider(team, names_sep = "_")
-
+  unnest_wider(team, names_sep = "_") %>% 
+  mutate(a_fecha = today(), .before = "playerRanking" )
 #escribir el dataframe en la carpeta "data/"
 write.csv(euroligaStats, "data/euroligaStats.csv", row.names = F)
