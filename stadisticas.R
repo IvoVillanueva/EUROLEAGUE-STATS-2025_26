@@ -1,7 +1,7 @@
 library(httr)
 library(tidyverse)
 
-euroligaStats <- GET(JSON_STATS_EUROLEAGE) %>%
+euroligaStats <- GET("JSON_STATS_EUROLEAGE") %>%
   content() %>% 
   pluck("players") %>%
   tibble(value = .) %>%
