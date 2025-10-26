@@ -3,7 +3,7 @@ name: Estadisticas tradicioneles Eurleague
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 8 * * *'
+    - cron: '0 2 * * TUE-SAT' 
 
 jobs:
   Get-NBA-DOY-Odds:
