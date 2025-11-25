@@ -9,8 +9,6 @@ jobs:
   Get-Estadisticas-tradicionales-Euroleague:
     name: Actualizar tradicionales Euroleague y Eurocup
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3  
       
