@@ -11,5 +11,4 @@ today <- format(as.POSIXct(Sys.time(), tz = "UTC"),
                 format = "%d-%m-%Y %H:%M:%S")
 
 # asegurar que la carpeta data existe
-if (!dir.exists("data/euroligue/")) dir.create("data/euroligue/")
-if (!dir.exists("data/eurocup/")) dir.create("data/eurocup/")
+if (!dir.exists("data")) dir.create("data")
