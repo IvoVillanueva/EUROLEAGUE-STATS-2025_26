@@ -1,4 +1,4 @@
-name: Estadisticas tradicionales Euroleague
+name: Estadisticas tradicionales Euroleague y Eurocup
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   Get-Estadisticas-tradicionales-Euroleague:
-    name: Actualizar Estadisticas Euroleague 
+    name: Actualizar tradicionales Euroleague y Eurocup
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -32,13 +32,14 @@ jobs:
           
       - name: Install CRAN packages
         uses: r-lib/actions/setup-r-dependencies@v2
-        with: 
-          packages: tidyverse, httr
+        with:
+          packages: httr, purrr, tidyr, dplyr, tibble, jsonlite
           
       - name: Run R script
         env:
           JSON_STATS_EUROLEAGUE: ${{ secrets.JSON_STATS_EUROLEAGUE }}
-        run: Rscript stadisticas.R
+          JSON_STATS_EUROCUP: ${{ secrets.JSON_STATS_EUROCUP }}
+        run: Rscript main.R
         shell: bash
 
       - name: Commit changes in data folder
