@@ -1,4 +1,4 @@
-source(scripts/helpers.R)
+source(helpers.R)
 
 #codigo
 euroliga_stats <- GET(Sys.getenv("JSON_STATS_EUROLEAGUE"), query = list()) %>%
