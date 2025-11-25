@@ -37,7 +37,7 @@ jobs:
         env:
           JSON_STATS_EUROLEAGUE: ${{ secrets.JSON_STATS_EUROLEAGUE }}
           JSON_STATS_EUROCUP: ${{ secrets.JSON_STATS_EUROCUP }}
-        run: Rscript main.R
+        run: Rscript scripts/main.R
         shell: bash
 
       - name: Commit changes in data folder
