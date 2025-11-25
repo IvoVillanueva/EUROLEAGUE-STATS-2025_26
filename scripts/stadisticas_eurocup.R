@@ -1,4 +1,4 @@
-source(helpers.R)
+source("scripts/helpers.R")
 
 # codigo
 eurocup_stats <- GET(Sys.getenv("JSON_STATS_EUROCUP"), query = list()) %>%
