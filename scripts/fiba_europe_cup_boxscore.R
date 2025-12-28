@@ -1,4 +1,4 @@
-vamos a ir paso por por paso
+
 
 links <- "https://www.fiba.basketball/en/events/fiba-europe-cup-25-26" %>%
   read_html() %>%
